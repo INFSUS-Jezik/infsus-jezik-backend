@@ -15,27 +15,27 @@ import java.util.List;
 public class ClassroomController {
 
     private final ClassroomService classroomService;
-    //OK
+
     @GetMapping
     public List<ClassroomDto> getClassrooms(@RequestParam(required = false) String name) {
         return classroomService.getClassrooms(name);
     }
-    //OK
+
     @GetMapping("/{classroomId}")
     public ClassroomDto getClassroomById(@PathVariable Long classroomId) {
         return classroomService.getClassroomById(classroomId);
     }
-   //OK
+
     @PostMapping
     public ClassroomDto createClassroom(@RequestBody ClassroomForm form) {
         return classroomService.createClassroom(form);
     }
-    //OK
+
     @PutMapping("/{classroomId}")
     public ClassroomDto updateClassroom(@PathVariable Long classroomId, @RequestBody ClassroomForm form) {
         return classroomService.updateClassroom(classroomId, form);
     }
-    //OK -- ne moze  se obrisat ako je vezano na raspored (provjerit?)
+
     @DeleteMapping("/{classroomId}")
     public ResponseEntity<Void> deleteClassroom(@PathVariable Long classroomId) {
         classroomService.deleteClassroom(classroomId);

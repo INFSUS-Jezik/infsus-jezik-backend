@@ -13,19 +13,17 @@ public class ScheduleController {
 
     private final ScheduleService scheduleService;
 
-    //validacija jel postoji vec taj termin u toj ucionici??
-    //OK
+
     @PostMapping("/api/courses/{courseId}/schedules")
     public ScheduleDto createSchedule(@PathVariable Long courseId, @RequestBody ScheduleForm form) {
         return scheduleService.createSchedule(courseId, form);
     }
 
-    //OK
     @PutMapping("/api/schedules/{scheduleId}")
     public ScheduleDto updateSchedule(@PathVariable Long scheduleId, @RequestBody ScheduleForm form) {
         return scheduleService.updateSchedule(scheduleId, form);
     }
-    //OK
+
     @DeleteMapping("/api/schedules/{scheduleId}")
     public ResponseEntity<Void> deleteSchedule(@PathVariable Long scheduleId) {
         scheduleService.deleteSchedule(scheduleId);

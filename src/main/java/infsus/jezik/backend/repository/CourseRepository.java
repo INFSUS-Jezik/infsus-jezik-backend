@@ -15,4 +15,6 @@ public interface CourseRepository extends JpaRepository<Course, Long> {
 
     @EntityGraph(attributePaths = {"professor", "schedules", "enrollments"})
     List<Course> findAll();
+
+
 }
