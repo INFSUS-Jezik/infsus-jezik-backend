@@ -13,7 +13,7 @@ public class CourseDto {
     private String name;
     private String description;
     private BigDecimal price;
-    private ProfessorDto professor;
+    private ProfessorListItemDto professor;
     private Set<EnrollmentDto> enrollments;
     private Set<ScheduleDto> schedules;
 }

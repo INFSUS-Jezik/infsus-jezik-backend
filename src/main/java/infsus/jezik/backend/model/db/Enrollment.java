@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDateTime;
+import java.time.OffsetDateTime;
 
 @Getter
 @Setter
@@ -12,7 +13,6 @@ import java.time.LocalDateTime;
 @Table(name = "enrollments")
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @ToString(exclude = {"course", "student"})
-@AllArgsConstructor
 public class Enrollment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -27,7 +27,7 @@ public class Enrollment {
     private Course course;
 
     @Column(nullable = false)
-    private LocalDateTime enrollmentDate = LocalDateTime.now();
+    private OffsetDateTime enrollmentDate = OffsetDateTime.now();
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)

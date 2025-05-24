@@ -11,7 +11,6 @@ import lombok.*;
 @Table(name = "students")
 @EqualsAndHashCode(callSuper = true, onlyExplicitlyIncluded = true)
 @ToString(callSuper = true)
-@AllArgsConstructor
 public class Student extends User {
     private String additionalContact;
 }

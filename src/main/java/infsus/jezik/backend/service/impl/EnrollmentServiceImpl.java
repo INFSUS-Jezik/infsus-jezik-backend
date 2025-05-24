@@ -16,7 +16,9 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.time.OffsetDateTime;
 import java.util.List;
+import java.util.Objects;
 
 @Service
 @AllArgsConstructor
@@ -49,9 +51,9 @@ public class EnrollmentServiceImpl implements EnrollmentService {
         enrollment.setCourse(course);
 
         if (form.getEnrollmentDate() != null) {
-            enrollment.setEnrollmentDate(LocalDateTime.parse(form.getEnrollmentDate()));
+            enrollment.setEnrollmentDate(OffsetDateTime.parse(form.getEnrollmentDate()));
         } else {
-            enrollment.setEnrollmentDate(LocalDateTime.now());
+            enrollment.setEnrollmentDate(OffsetDateTime.now());
         }
 
         if (form.getStatus() != null) {
@@ -76,7 +78,9 @@ public class EnrollmentServiceImpl implements EnrollmentService {
         if (form.getGrade2() != null) enrollment.setGrade2(form.getGrade2());
         if (form.getGrade3() != null) enrollment.setGrade3(form.getGrade3());
         if (form.getFinalGrade() != null) enrollment.setFinalGrade(form.getFinalGrade());
-
+        if(Objects.equals(form.getStatus(), "COMPLETED") && form.getFinalGrade() == null) {
+            throw new RuntimeException("Final grade must be defined.");
+        }
         Enrollment updated = enrollmentRepository.save(enrollment);
         return enrollmentMapper.toDto(updated);
     }

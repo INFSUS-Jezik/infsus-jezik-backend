@@ -13,7 +13,6 @@ import java.time.LocalTime;
 @Table(name = "schedules")
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @ToString(exclude = {"course"})
-@AllArgsConstructor
 public class Schedule {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

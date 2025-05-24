@@ -13,7 +13,6 @@ import java.util.Set;
 @Table(name = "courses")
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @ToString(exclude = {"schedules", "enrollments"})
-@AllArgsConstructor
 public class Course {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
