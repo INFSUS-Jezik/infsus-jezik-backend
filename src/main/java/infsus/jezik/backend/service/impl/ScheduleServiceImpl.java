@@ -40,22 +40,22 @@ public class ScheduleServiceImpl implements ScheduleService {
             throw new RuntimeException("End time must be after start time.");
         }
 
-        // Check for overlapping schedules in the same classroom
+
         List<Schedule> classroomSchedules = scheduleRepository.findAll().stream()
                 .filter(s -> s.getClassroom().getId().equals(classroom.getId()) && s.getDayOfWeek().equals(form.getDayOfWeek()))
                 .toList();
-
+        //provjera termina u učionici
         for (Schedule s : classroomSchedules) {
             if (timesOverlap(startTime, endTime, s.getStartTime(), s.getEndTime())) {
                 throw new RuntimeException("Schedule overlaps with another in the same classroom.");
             }
         }
 
-        // Check for overlapping schedules for the same professor
+
         List<Schedule> professorSchedules = scheduleRepository.findAll().stream()
                 .filter(s -> s.getCourse().getProfessor().getId().equals(course.getProfessor().getId()) && s.getDayOfWeek().equals(form.getDayOfWeek()))
                 .toList();
-
+        //provjera profesorovih termina
         for (Schedule s : professorSchedules) {
             if (timesOverlap(startTime, endTime, s.getStartTime(), s.getEndTime())) {
                 throw new RuntimeException("Schedule overlaps with another for the same professor.");
@@ -88,7 +88,7 @@ public class ScheduleServiceImpl implements ScheduleService {
             throw new RuntimeException("End time must be after start time.");
         }
 
-        // Check for overlapping schedules in the same classroom (excluding current)
+
         List<Schedule> classroomSchedules = scheduleRepository.findAll().stream()
                 .filter(s -> !s.getId().equals(scheduleId)
                         && s.getClassroom().getId().equals(classroom.getId())
@@ -101,7 +101,7 @@ public class ScheduleServiceImpl implements ScheduleService {
             }
         }
 
-        // Check for overlapping schedules for the same professor (excluding current)
+
         Long professorId = schedule.getCourse().getProfessor().getId();
         List<Schedule> professorSchedules = scheduleRepository.findAll().stream()
                 .filter(s -> !s.getId().equals(scheduleId)

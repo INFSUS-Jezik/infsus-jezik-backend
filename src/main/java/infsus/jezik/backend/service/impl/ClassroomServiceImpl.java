@@ -30,7 +30,7 @@ public class ClassroomServiceImpl implements ClassroomService {
     @Override
     public ClassroomDto getClassroomById(Long classroomId) {
         Classroom classroom = classroomRepository.findById(classroomId)
-                .orElseThrow(() -> new RuntimeException("Classroom not found"));
+                .orElseThrow(() -> new RuntimeException("Classroom with ID: " + classroomId + " not found"));
         return classroomMapper.toDto(classroom);
     }
 
@@ -48,7 +48,7 @@ public class ClassroomServiceImpl implements ClassroomService {
     @Override
     public ClassroomDto updateClassroom(Long classroomId, ClassroomForm form) {
         Classroom classroom = classroomRepository.findById(classroomId)
-                .orElseThrow(() -> new RuntimeException("Classroom not found"));
+                .orElseThrow(() -> new RuntimeException("Classroom with ID: " + classroomId + " not found"));
         if (!classroom.getAbbreviation().equals(form.getAbbreviation()) &&
                 classroomRepository.existsByAbbreviation(form.getAbbreviation())) {
             throw new RuntimeException("Abbreviation must be unique");
@@ -61,7 +61,7 @@ public class ClassroomServiceImpl implements ClassroomService {
     @Override
     public void deleteClassroom(Long classroomId) {
         Classroom classroom = classroomRepository.findById(classroomId)
-                .orElseThrow(() -> new RuntimeException("Classroom not found"));
+                .orElseThrow(() -> new RuntimeException("Classroom with ID: " + classroomId + " not found"));
         boolean used = scheduleRepository.findAll().stream()
                 .anyMatch(s -> s.getClassroom().getId().equals(classroomId));
         if (used) throw new RuntimeException("Classroom is used in a schedule");
