@@ -29,7 +29,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @SpringBootTest
 @AutoConfigureMockMvc
-@ActiveProfiles("test") // koristi test konfiguraciju (npr. H2)
+@ActiveProfiles("test")
 class CourseControllerIntegrationTest {
 
     @Autowired
