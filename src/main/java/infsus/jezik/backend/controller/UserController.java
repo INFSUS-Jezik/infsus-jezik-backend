@@ -1,6 +1,7 @@
 package infsus.jezik.backend.controller;
 
 import infsus.jezik.backend.model.dto.ProfessorDto;
+import infsus.jezik.backend.model.dto.ProfessorListItemDto;
 import infsus.jezik.backend.model.dto.StudentDto;
 import infsus.jezik.backend.service.UserService;
 import lombok.RequiredArgsConstructor;
@@ -16,7 +17,7 @@ public class UserController {
     private final UserService userService;
 
     @GetMapping("/api/professors/list")
-    public List<ProfessorDto> getProfessorsList() {
+    public List<ProfessorListItemDto> getProfessorsList() {
         return userService.getAllProfessors();
     }
 

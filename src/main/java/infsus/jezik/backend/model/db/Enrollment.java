@@ -12,6 +12,7 @@ import java.time.LocalDateTime;
 @Table(name = "enrollments")
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @ToString(exclude = {"course", "student"})
+@AllArgsConstructor
 public class Enrollment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

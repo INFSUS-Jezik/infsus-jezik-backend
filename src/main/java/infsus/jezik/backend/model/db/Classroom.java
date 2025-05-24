@@ -1,6 +1,7 @@
 package infsus.jezik.backend.model.db;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -8,6 +9,7 @@ import lombok.NoArgsConstructor;
 @Table(name = "classrooms")
 @Data
 @NoArgsConstructor
+@AllArgsConstructor
 public class Classroom {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
