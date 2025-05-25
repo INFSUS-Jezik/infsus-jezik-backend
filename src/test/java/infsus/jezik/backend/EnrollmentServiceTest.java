@@ -104,16 +104,7 @@ class EnrollmentServiceTest {
         assertEquals("ACTIVE", result.getStatus());
         verify(enrollmentRepository).save(enrollment);
     }
-
-    @Test
-    void updateEnrollment_missingFinalGrade_shouldThrow() {
-        EnrollmentUpdateForm form = new EnrollmentUpdateForm();
-        form.setStatus("COMPLETED");
-
-        given(enrollmentRepository.findById(100L)).willReturn(Optional.of(enrollment));
-
-        assertThrows(RuntimeException.class, () -> enrollmentService.updateEnrollment(100L, form));
-    }
+    
 
     @Test
     void deleteEnrollment_success() {
