@@ -1,6 +1,4 @@
-#INFSUS - Jezik Backend
-
-Ovo je backend dio projekta **INFSUS - Jezik**, razvijen korištenjem **Spring Boot**, **Java 21**, i **Maven** kao build alatom. Aplikacija služi za upravljanje predmetima, profesorima, rasporedima i upisima.
+Ovo je backend za DZ03 domaću zadaću iz kolegija INFSUS (Informacijski sustavi) na FER-u.
 
 ---
 
@@ -27,7 +25,7 @@ Prije pokretanja projekta, treba imati instalirano:
 
 ### 1. Kloniraj repozitorij 
 
-- git clone https://github.com/INFSUS-Jezik/infsus-jezik-frontend.git
+- git clone https://github.com/INFSUS-Jezik/infsus-jezik-backend.git
 - cd infsus-jezik-backend
 
 ### 2. Build projekta
