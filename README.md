@@ -27,8 +27,8 @@ Prije pokretanja projekta, treba imati instalirano:
 
 ### 1. Kloniraj repozitorij 
 
-git clone https://github.com/INFSUS-Jezik/infsus-jezik-frontend.git
-cd infsus-jezik-backend
+- git clone https://github.com/INFSUS-Jezik/infsus-jezik-frontend.git
+- cd infsus-jezik-backend
 
 ### 2. Build projekta
 mvn clean install
