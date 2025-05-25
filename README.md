@@ -1,6 +1,6 @@
 #INFSUS - Jezik Backend
 
-Ovo je backend dio projekta **INFSUS - Jezik**, razvijen korištenjem **Spring Boot **, **Java 21**, i **Maven** kao build alatom. Aplikacija služi za upravljanje predmetima, profesorima, rasporedima i upisima.
+Ovo je backend dio projekta **INFSUS - Jezik**, razvijen korištenjem **Spring Boot**, **Java 21**, i **Maven** kao build alatom. Aplikacija služi za upravljanje predmetima, profesorima, rasporedima i upisima.
 
 ---
 
