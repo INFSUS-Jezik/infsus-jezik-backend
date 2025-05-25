@@ -39,4 +39,7 @@ a) s PostgreSQL bazom podataka
 b) s H2 bazom podataka
   - mvn spring-boot:run -Dspring-boot.run.profiles=dev
 
+### 4. Pokretanje testova
+- za pokretanje testova: mvn test
+
   
