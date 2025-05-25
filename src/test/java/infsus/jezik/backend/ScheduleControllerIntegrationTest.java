@@ -102,7 +102,6 @@ class ScheduleControllerIntegrationTest {
 
     @Test
     void testUpdateSchedule() throws Exception {
-        // Create existing schedule
         Schedule schedule = new Schedule();
         schedule.setCourse(course);
         schedule.setClassroom(classroom);

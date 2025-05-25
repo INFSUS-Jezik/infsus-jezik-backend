@@ -78,9 +78,6 @@ public class EnrollmentServiceImpl implements EnrollmentService {
         if (form.getGrade2() != null) enrollment.setGrade2(form.getGrade2());
         if (form.getGrade3() != null) enrollment.setGrade3(form.getGrade3());
         if (form.getFinalGrade() != null) enrollment.setFinalGrade(form.getFinalGrade());
-        if(Objects.equals(form.getStatus(), "COMPLETED") && form.getFinalGrade() == null) {
-            throw new RuntimeException("Final grade must be defined if status is completed!");
-        }
         Enrollment updated = enrollmentRepository.save(enrollment);
         return enrollmentMapper.toDto(updated);
     }

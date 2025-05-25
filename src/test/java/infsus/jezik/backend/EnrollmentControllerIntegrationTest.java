@@ -109,7 +109,6 @@ class EnrollmentControllerIntegrationTest {
 
     @Test
     void testUpdateEnrollment() throws Exception {
-        // create enrollment manually
         Enrollment enrollment = new Enrollment();
         enrollment.setCourse(course);
         enrollment.setStudent(student);

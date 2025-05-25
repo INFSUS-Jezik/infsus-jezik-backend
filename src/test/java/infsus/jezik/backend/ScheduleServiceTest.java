@@ -132,7 +132,7 @@ class ScheduleServiceTest {
     void updateSchedule_success() {
         given(scheduleRepository.findById(100L)).willReturn(Optional.of(schedule));
         given(classroomRepository.findById(5L)).willReturn(Optional.of(classroom));
-        given(scheduleRepository.findAll()).willReturn(List.of(schedule)); // skip self
+        given(scheduleRepository.findAll()).willReturn(List.of(schedule));
         given(scheduleRepository.save(schedule)).willReturn(schedule);
         given(scheduleMapper.toDto(schedule)).willReturn(scheduleDto);
 
