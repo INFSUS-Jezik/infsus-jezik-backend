@@ -18,7 +18,7 @@ Prije pokretanja projekta, treba imati instalirano:
 
 - **Java 21**
 - **Maven 3.9+**
-- **Docker** (za pokretanje aplikacije s PostgreSQL bazom podataka
+- **Docker** (za pokretanje aplikacije s PostgreSQL bazom podataka)
 
 ## Kako buildati i pokrenuti projekt
 
